@@ -1,0 +1,23 @@
+.keyPeg {
+  height: 15px;
+  width: 15px;
+  background-color: #c7ccd4;
+  border: 1px solid #bbc0c7;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.keyPeg__position {
+  background-color: #000000;
+  border-color: #000000;
+}
+
+.keyPeg__color {
+  background-color: #ffffff;
+  border-color:  #ffffff;
+}
+
+.keyPeg__none {
+  background-color: #c7ccd4;
+  border-color: #bbc0c7;
+}

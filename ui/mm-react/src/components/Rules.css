@@ -1,0 +1,26 @@
+.rules {
+  margin: 0;
+  padding: 0;
+}
+
+.rulesToggle {
+  cursor: pointer;
+  font-size: 16px;
+  line-height: 24px;
+  color: #595959;
+}
+
+.rules p {
+  font-size: 14px;
+  line-height: 20px;
+  color: #595959;
+  margin: 5px 0 0 0;
+}
+
+.rules p.Hide {
+  display: none;
+}
+
+.rules p.Show {
+  display: visible;
+}

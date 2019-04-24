@@ -1,0 +1,22 @@
+.header {
+  background-color: #3d4761;
+}
+
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.header h1 {
+  float: left;
+  margin: 0 8px 0 16px;
+  padding: 0;
+  color: white;
+  text-transform: uppercase;
+  font-size: 42px;
+}
+
+.header .codePegList {
+  float: left;
+}

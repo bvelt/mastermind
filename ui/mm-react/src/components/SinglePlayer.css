@@ -1,0 +1,35 @@
+.singlePlayer {
+  border: 0;
+  padding: 0;
+}
+
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.column {
+  float: left;
+  padding: 16px;
+}
+
+.sidebar {
+  width: 25%;
+} 
+
+.singlePlayer p {
+  color: #595959;
+  font-size: 16px;
+  line-height: 24px;
+  padding: 0;
+  margin: 0 0 8px 0;
+}
+
+.gameover p {
+  color: #595959;
+  font-size: 16px;
+  line-height: 24px;
+  padding: 0;
+  margin: 16px 0 8px 0;
+}

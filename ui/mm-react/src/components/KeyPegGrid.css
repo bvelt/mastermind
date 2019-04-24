@@ -1,0 +1,9 @@
+.keyPegGrid {
+  border-collapse: collapse;
+  border-spacing: 0;
+  margin-left: 4px;
+}
+
+.keyPegGrid td {
+  padding: 2px 2px 0 0;
+}

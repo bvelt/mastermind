@@ -1,0 +1,61 @@
+.codePeg {
+  height: 38px;
+  width: 38px;
+  background-color: #c7ccd4;
+  border: 2px solid #bbc0c7;
+  color: #bbc0c7;
+  border-radius: 50%;
+  display: inline-block;
+  text-align: center;
+  font-size: 34px;
+}
+
+.codePeg__selectable {
+  cursor: pointer;
+}
+
+.codePeg__selectable:hover {
+  border-color: #8c8c8c;
+}
+
+.codePeg__blue {
+  background-color: #1890ff;
+  border-color: #1890ff;
+  color: #1890ff;
+}
+
+.codePeg__green {
+  background-color: #52c41a;
+  border-color: #52c41a;
+  color: #52c41a;
+}
+
+.codePeg__orange {
+  background-color: #fa8c16;
+  border-color: #fa8c16;
+  color: #fa8c16;
+}
+
+.codePeg__purple {
+  background-color: #722ed1;
+  border-color: #722ed1;
+  color: #722ed1;
+}
+
+.codePeg__red {
+  background-color: #f5222d;
+  border-color: #f5222d;
+  color: #f5222d;
+}
+
+.codePeg__yellow {
+  background-color: #fadb14;
+  border-color: #fadb14;
+  color: #fadb14;
+}
+
+.codePeg__empty {
+  background-color: #c7ccd4;
+  border-color: #bbc0c7;
+  color: #bbc0c7;
+}
