@@ -17,10 +17,6 @@ class GameFlow {
     return this.state.broken === true;
   }
 
-  isSuccess() {
-    return this.state.broken === true;
-  }
-
   isFailure() {
     return this.state.broken !== true
       && this.state.prevGuesses.length >= this.state.settings.maximumGuessCount;
