@@ -10,7 +10,6 @@ import './CodeEditor.css';
 class CodeEditor extends React.Component {
 
   static propTypes = {
-    onCodeDone: PropTypes.func,
     length: PropTypes.number,
     values: PropTypes.array
   };
@@ -65,11 +64,9 @@ class CodeEditor extends React.Component {
   handleDone() {
     const {
       values,
-      dispatch,
-      onCodeDone
+      dispatch
     } = this.props;
     dispatch(actions.saveCode());
-    onCodeDone(values);
   }
 
   render() {

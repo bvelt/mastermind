@@ -13,7 +13,7 @@ storiesOf('CodeEditor', module)
   .add('with default settings', () => {
     return (
       <Provider store={createStore(gameReducers)}>
-        <CodeEditor onCodeDone={code => action('onCodeDone')(code)}></CodeEditor>
+        <CodeEditor></CodeEditor>
       </Provider>
     );
   });   
