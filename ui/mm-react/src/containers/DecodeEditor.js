@@ -89,6 +89,14 @@ class DecodeEditor extends React.Component {
     dispatch(actions.newGame());
   }
 
+  padRight(items, length, value) {
+    const padded = Array.from(items);
+    while (padded.length < length) {
+      padded.push(value);
+    }
+    return padded;
+  }
+
   render() {
     const {
       code,
@@ -100,23 +108,19 @@ class DecodeEditor extends React.Component {
       broken
     } = this.props;
 
-    let gridGuesses = Array.from(prevGuesses);
-    let gridKeys = Array.from(prevKeys);
+    let gs = Array.from(prevGuesses);
+    let ks = Array.from(prevKeys);
 
     const active = !broken && prevGuesses.length < maximumGuessCount;
-    let message = `Congratualations! You broke the code.`;
+    let message = "Congratualations! You broke the code.";
 
     if (!active && !broken) {
-      gridGuesses.push(code);
-      gridKeys.push(Array(length).fill(0));
+      gs.push(code);
+      ks.push(Array(length).fill(0));
       message = "Bummer. You failed to break the code.";
     } else if (active) {
-      const gridNextGuess = Array.from(nextGuess);
-      while (gridNextGuess.length < length) {
-        gridNextGuess.push(CodePeg.defaultValue());
-      }
-      gridGuesses.push(gridNextGuess);
-      gridKeys.push(Array(length).fill(KeyPeg.defaultValue()));
+      gs.push(this.padRight(nextGuess, length, CodePeg.defaultValue()));
+      ks.push(Array(length).fill(KeyPeg.defaultValue()));
       message = `Guess secret code of ${length} colored pegs`;
     }
 
@@ -147,8 +151,8 @@ class DecodeEditor extends React.Component {
           onClick={this.handleCheck}></Button>
         <DecodeGrid key={6}
           remainingGuessCount={maximumGuessCount - prevGuesses.length}
-          guesses={gridGuesses}
-          keys={gridKeys}></DecodeGrid>
+          guesses={gs}
+          keys={ks}></DecodeGrid>
         {newGameButton}
       </div>
     );

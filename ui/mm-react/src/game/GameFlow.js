@@ -50,8 +50,8 @@ class GameFlow {
 
   newGame() {
     const maker = new CodeMaker(this.state.settings);
-    const code = maker.createRandom();
-    this.state = new GameState(this.state.settings, code);
+    const randomCode = maker.createRandom();
+    this.state = new GameState(this.state.settings, randomCode);
   }
 
   randomGuess() {

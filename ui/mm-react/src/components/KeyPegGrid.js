@@ -13,16 +13,17 @@ class KeyPegGrid extends React.Component {
       values = []
     } = this.props;
 
-    while (values.length < 4) {
-      values.push(KeyPeg.defaultValue());
+    const paddedValues = Array.from(values);
+    while (paddedValues.length < 4) {
+      paddedValues.push(KeyPeg.defaultValue());
     }
 
     const rows = [];
-    for (let i = 0; i < values.length; i += 2) {
+    for (let i = 0; i < paddedValues.length; i += 2) {
       rows.push(
         <tr key={i}>
-          <td><KeyPeg value={values[i]}></KeyPeg></td>
-          <td><KeyPeg value={values[i + 1]}></KeyPeg></td>
+          <td><KeyPeg value={paddedValues[i]}></KeyPeg></td>
+          <td><KeyPeg value={paddedValues[i + 1]}></KeyPeg></td>
         </tr>
       );
     }
