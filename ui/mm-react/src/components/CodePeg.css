@@ -7,7 +7,8 @@
   border-radius: 50%;
   display: inline-block;
   text-align: center;
-  font-size: 34px;
+  vertical-align: middle;
+  font-size: 28px;
 }
 
 .codePeg__selectable {

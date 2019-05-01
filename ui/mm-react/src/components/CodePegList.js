@@ -21,8 +21,7 @@ class CodePegList extends React.Component {
     for (let i = 0; i < values.length; i++) {
       items.push(
         <li key={i}>
-          <CodePeg key={i}
-            value={values[i]}
+          <CodePeg value={values[i]}
             isClickable={isSelectable}
             onClick={onSelect}></CodePeg>
         </li>

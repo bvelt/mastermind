@@ -9,17 +9,17 @@ import '../index.css';
 storiesOf('DecodeGrid', module)
   .addDecorator(withKnobs)
   .add('default', () => {
-    const codeValues = Array(4).fill(CodePeg.defaultValue());
-    const keyValues = Array(4).fill(KeyPeg.defaultValue());
-    return (<DecodeGrid codeValues={codeValues} keyValues={keyValues}></DecodeGrid>);
+    const guesses = [Array(4).fill(CodePeg.defaultValue())];
+    const keys = [Array(4).fill(KeyPeg.defaultValue())];
+    return (<DecodeGrid remainingGuessCount={3} guesses={guesses} keys={keys}></DecodeGrid>);
   })
   .add('one guess', () => {
-    const codeValues = [...CodePeg.colors().slice(0, 4).keys()];
-    const keyValues = [0, 0, 1, 2];
-    return (<DecodeGrid codeValues={codeValues} keyValues={keyValues}></DecodeGrid>);
+    const guesses = [[...CodePeg.colors().slice(0, 4).keys()]];
+    const keys = [[0, 0, 1, 2]];
+    return (<DecodeGrid remainingGuessCount={2} guesses={guesses} keys={keys}></DecodeGrid>);
   })
   .add('two guess', () => {
-    const codeValues = [0, 1, 2, 3, 4, 5, 0, 1];
-    const keyValues = [0, 0, 1, 2, 0, 1, 1, 2];
-    return (<DecodeGrid codeValues={codeValues} keyValues={keyValues}></DecodeGrid>);
+    const guesses = [[0, 1, 2, 3], [4, 5, 0, 1]];
+    const keys = [[0, 0, 1, 2], [0, 1, 1, 2]];
+    return (<DecodeGrid remainingGuessCount={1} guesses={guesses} keys={keys}></DecodeGrid>);
   });   

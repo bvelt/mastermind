@@ -1,0 +1,19 @@
+.singlePlayer {
+  border: 0;
+  padding: 0;
+}
+
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.column {
+  float: left;
+  padding: 16px;
+}
+
+.sidebar {
+  width: 25%;
+}

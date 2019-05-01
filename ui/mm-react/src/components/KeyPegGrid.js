@@ -10,8 +10,12 @@ class KeyPegGrid extends React.Component {
 
   render() {
     const {
-      values = Array(4).fill(KeyPeg.defaultValue())
+      values = []
     } = this.props;
+
+    while (values.length < 4) {
+      values.push(KeyPeg.defaultValue());
+    }
 
     const rows = [];
     for (let i = 0; i < values.length; i += 2) {

@@ -7,10 +7,10 @@ class KeyPeg extends React.Component {
     value: PropTypes.number
   };
 
-  static MATCH_TYPE = ['position', 'color', 'none']
+  static KEY_NAMES = ['position', 'color', 'none']
 
   static defaultValue() {
-    return KeyPeg.MATCH_TYPE.indexOf('none');
+    return KeyPeg.KEY_NAMES.indexOf('none');
   }
 
   render() {
@@ -19,7 +19,7 @@ class KeyPeg extends React.Component {
     } = this.props;
 
     return (
-      <span className={`keyPeg keyPeg__${KeyPeg.MATCH_TYPE[value]}`}></span>
+      <span className={`keyPeg keyPeg__${KeyPeg.KEY_NAMES[value]}`}></span>
     );
   }
 }

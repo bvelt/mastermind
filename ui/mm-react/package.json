@@ -6,7 +6,9 @@
     "core-js": "3",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
-    "react-scripts": "3.0.0"
+    "react-redux": "^7.0.3",
+    "react-scripts": "3.0.0",
+    "redux": "^4.0.1"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -32,6 +34,7 @@
     "@storybook/addon-links": "^5.0.10",
     "@storybook/addons": "^5.0.10",
     "@storybook/react": "^5.0.10",
-    "babel-loader": "^8.0.5"
+    "babel-loader": "^8.0.5",
+    "redux-devtools": "^3.5.0"
   }
 }

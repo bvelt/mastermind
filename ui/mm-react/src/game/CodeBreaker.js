@@ -1,3 +1,4 @@
+import defaultSettings from './GameSettings';
 
 class CodeBreaker {
 
@@ -7,24 +8,24 @@ class CodeBreaker {
     none: 2
   }
 
-  constructor(code = []) {
-    this.code = code;
+  constructor(settings = defaultSettings) {
+    this.settings = settings;
   }
 
-  makeGuess(guess) {
-    if (guess.length !== this.code.length) {
-      throw new Error(`Length of guess must be equal to ${this.code.length}`);
+  checkGuess(code, guess) {
+    if (!(code.length === guess.length)) {
+      throw new Error(`Guess length ${guess.length} must be equal to code length ${code.length}`);
     }
 
-    let matches = [];
+    let key = [];
     let xs = [];
     let ys = [];
 
-    for (let i = 0; i < this.code.length; i++) {
-      if (this.code[i] === guess[i]) {
-        matches.push(CodeBreaker.MATCH_KEYS.position);
+    for (let i = 0; i < code.length; i++) {
+      if (code[i] === guess[i]) {
+        key.push(CodeBreaker.MATCH_KEYS.position);
       } else {
-        xs.push(this.code[i]);
+        xs.push(code[i]);
         ys.push(guess[i]);
       }
     }
@@ -34,7 +35,7 @@ class CodeBreaker {
       for (let i = 0; i < ys.length; i++) {
         let y = ys.shift();
         if (x === y) {
-          matches.push(CodeBreaker.MATCH_KEYS.color);
+          key.push(CodeBreaker.MATCH_KEYS.color);
           break;
         } else {
           ys.push(y);
@@ -42,17 +43,11 @@ class CodeBreaker {
       }
     }
 
-    while (matches.length < this.code.length) {
-      matches.push(CodeBreaker.MATCH_KEYS.none);
+    while (key.length < code.length) {
+      key.push(CodeBreaker.MATCH_KEYS.none);
     }
 
-    const broken = matches.every(m =>
-      m === CodeBreaker.MATCH_KEYS.position);
-
-    return {
-      broken: broken,
-      matches: matches
-    };
+    return key;
   }
 }
 

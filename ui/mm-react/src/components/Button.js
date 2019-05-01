@@ -16,7 +16,7 @@ class Button extends React.Component {
     } = this.props;
     return (
       <button type={'button'}
-      className={`button ${isDisabled ? 'button__disabled' : ''}`}
+        className={`button ${isDisabled ? 'button__disabled' : ''}`}
         disabled={isDisabled}
         onClick={!isDisabled ? onClick : () => false}>
         {label}

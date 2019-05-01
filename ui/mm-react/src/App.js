@@ -1,16 +1,28 @@
 import React from 'react';
+import { Provider } from 'react-redux'
+import { createStore } from 'redux'
 import Header from './components/Header';
-import SinglePlayer from './components/SinglePlayer';
-
+import SinglePlayer from './containers/SinglePlayer';
+import gameReducers from './reducers/Reducers';
+import * as actions from './actions/ActionCreators';
 import './App.css';
 
 class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.store = createStore(gameReducers);
+  }
+  componentDidMount() {
+    this.store.dispatch(actions.newGame());
+  }
   render() {
     return (
-      <div className="App">
-        <Header></Header>
-        <SinglePlayer maximumGuessCount={10}></SinglePlayer>
-      </div>
+      <Provider store={this.store}>
+        <div className="App">
+          <Header></Header>
+          <SinglePlayer></SinglePlayer>
+        </div>
+      </Provider>
     );
   }
 }

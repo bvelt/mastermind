@@ -1,7 +1,6 @@
 import React from 'react';
 import CodeMaker from '../game/CodeMaker';
 import CodePegList from './CodePegList';
-
 import './Header.css';
 
 class Header extends React.Component {
@@ -10,7 +9,7 @@ class Header extends React.Component {
     return (
       <div className="header clearfix">
         <h1>Mastermind</h1>
-        <CodePegList values={maker.createRandomly()}></CodePegList>
+        <CodePegList values={maker.createRandom()}></CodePegList>
       </div>
     );
   }
