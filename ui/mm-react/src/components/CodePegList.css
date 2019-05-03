@@ -8,23 +8,22 @@
 .codePegList ul.picker {
   list-style-type: none;
   margin: 0;
-  padding: 8px 2px;
+  padding: 4px 4px;
   background-color: white;
   border-radius: 16px 0 16px 0;
 }
 
 .codePegList ul.buttons {
   list-style-type: none;
-  margin: 16px 0;
+  margin: 0;
   padding: 8px 2px;
 }
 
 .codePegList li {
-  padding: 4px;
+  padding: 2px;
   margin: 0;
 }
 
 .codePegList li.check {
-  padding-top: 8px;
-  margin: 0;
+  padding-top: 4px;
 }

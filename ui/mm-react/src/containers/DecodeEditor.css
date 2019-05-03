@@ -7,11 +7,11 @@
 }
 
 .codePegList {
-  float: left;
+  float: right;
 }
 
 .decodeGrid {
-  float: left;
+  float: right;
 }
 
 .clearfix::after {
@@ -20,12 +20,11 @@
   display: table;
 }
 
-.gameover {
-  width: 300px;
-  margin-left: auto;
+.gameover .message {
+  float: right;
+  margin: 16px 8px;
 }
 
-.gameover p {
-  display: inline-block;
-  margin: 8px 8px 0 24px;
+.gameover .buttons {
+  float: right;
 }

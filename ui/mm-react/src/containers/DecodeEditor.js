@@ -132,8 +132,16 @@ class DecodeEditor extends React.Component {
     if (!active) {
       newGameButton = (
         <div className="gameover">
-          <p>{message}</p>
-          <Button key={7} label="TRY AGAIN" onClick={this.handleNewGame}></Button>
+          <div className="clearfix">
+            <div className="buttons">
+              <Button key={7} label="TRY AGAIN" onClick={this.handleNewGame}></Button>
+            </div>
+            <div className="message">
+              <span className="emoji" role="img" 
+                aria-label="Face">{broken === true ? '😃' : '🙁'}</span>
+              <span className="text">{message}</span>
+            </div>
+          </div>
         </div>
       );
     }
@@ -141,6 +149,10 @@ class DecodeEditor extends React.Component {
     return (
       <div className="decodeEditor">
         <div className="clearfix">
+          <DecodeGrid key={6}
+            remainingGuessCount={maximumGuessCount - prevGuesses.length}
+            guesses={gs}
+            keys={ks}></DecodeGrid>
           <CodePegList key={1} values={[...CodePeg.colors().keys()]}
             isSelectable={active && nextGuess.length < length}
             onSelect={this.handleSelect}
@@ -148,10 +160,6 @@ class DecodeEditor extends React.Component {
             onDelete={this.handleDelete}
             onRandom={this.handleRandom}
             onReset={this.handleReset}></CodePegList>
-          <DecodeGrid key={6}
-            remainingGuessCount={maximumGuessCount - prevGuesses.length}
-            guesses={gs}
-            keys={ks}></DecodeGrid>
         </div>
         {newGameButton}
       </div>

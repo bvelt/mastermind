@@ -1,7 +1,7 @@
 .decodeGrid {
   margin-top: 6px;
   background-color: #ffffff;
-  padding: 8px 16px 8px 16px;
+  padding: 4px 8px 4px 8px;
   border-radius: 0 24px 0 24px;
 }
 
@@ -10,7 +10,7 @@
   font-size: 14px;
   color: #595959d0;
   padding: 2px;
-  margin: 8px;
+  margin: 4px;
   border-radius: 24px;
   background-color: #F2F3F8;
 }
@@ -24,21 +24,21 @@
 }
 
 tr.decodeRow > td {
-  padding: 8px 4px;
+  padding: 2px 6px;
   margin: 0;
   font-size: 18px;
   color: #D8D8D8;
 }
 
 tr.decodeRow > td.rowHead {
-  padding-right: 16px;
+  padding: 2px 6px 2px 17px;
 }
 
 .decodeGrid td.keys {
-  padding: 0 0 0 16px;
+  padding: 0 0 0 8px;
   margin: 0;
 }
 
 .decodeGrid tr.solution {
-  background-color: #F2F3F8;
+  background-color: #f2f3f8;
 }
