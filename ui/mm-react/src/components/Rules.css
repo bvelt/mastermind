@@ -1,6 +1,7 @@
 .rules {
-  margin: 0;
+  margin: 8px;
   padding: 0;
+  float: left;
 }
 
 .rulesToggle {
@@ -15,6 +16,7 @@
   line-height: 20px;
   color: #595959;
   margin: 5px 0 0 0;
+  display: inline-block;
 }
 
 .rules p.Hide {

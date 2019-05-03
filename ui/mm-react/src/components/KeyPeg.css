@@ -1,23 +1,29 @@
+:root {
+  --key-peg-position: #000000;
+  --key-peg-color: #bfbfbf;
+  --key-peg-empty: #ffffff;
+  --key-peg-border: #9E9E9E;
+}
 .keyPeg {
   height: 15px;
   width: 15px;
-  background-color: #c7ccd4;
-  border: 1px solid #bbc0c7;
+  background-color: var(--key-peg-color-empty);
+  border: 1px solid var(--key-peg-border);
   border-radius: 50%;
   display: inline-block;
 }
 
 .keyPeg__position {
-  background-color: #000000;
-  border-color: #000000;
+  background-color: var(--key-peg-position);
+  border-color: var(--key-peg-position);
 }
 
 .keyPeg__color {
-  background-color: #ffffff;
-  border-color:  #ffffff;
+  background-color: var(--key-peg-color);
+  border-color:  var(--key-peg-border);
 }
 
 .keyPeg__none {
-  background-color: #c7ccd4;
-  border-color: #bbc0c7;
+  background-color: var(--key-peg-color-empty);
+  border-color: var(--key-peg-border);
 }

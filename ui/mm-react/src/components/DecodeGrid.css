@@ -1,27 +1,44 @@
 .decodeGrid {
-  margin-top: 5px;
-  border-collapse: collapse;
-  background-color: #d3d9e0;
+  margin-top: 6px;
+  background-color: #ffffff;
+  padding: 8px 16px 8px 16px;
+  border-radius: 0 24px 0 24px;
 }
 
-.decodeGrid caption {
-  text-align: left;
-  font-size: 16px;
-  line-height: 24px;
+.decodeGrid .caption {
+  text-align: center;
+  font-size: 14px;
   color: #595959d0;
-  padding: 4px 0 4px 0;
+  padding: 2px;
+  margin: 8px;
+  border-radius: 24px;
+  background-color: #F2F3F8;
 }
 
-.decodeGrid td, th {
-  padding: 3px 3px 0 0;
+.decodeGrid table {
+  border-collapse: collapse;
+}
+
+.decodeGrid tr:not(:last-child).decodeRow {
+  border-bottom: 1px solid #D8D8D8;
+}
+
+tr.decodeRow > td {
+  padding: 8px 4px;
   margin: 0;
+  font-size: 18px;
+  color: #D8D8D8;
+}
+
+tr.decodeRow > td.rowHead {
+  padding-right: 16px;
 }
 
 .decodeGrid td.keys {
-  padding: 0;
+  padding: 0 0 0 16px;
   margin: 0;
 }
 
 .decodeGrid tr.solution {
-  background-color: #bfbfbf;
+  background-color: #F2F3F8;
 }

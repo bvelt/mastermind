@@ -35,8 +35,7 @@ class CodePeg extends React.Component {
     return (
       <span
         className={`codePeg codePeg__${color} ${isClickable ? 'codePeg__selectable' : ''}`}
-        onClick={isClickable ? () => onClick(value) : () => false}
-      >{value === CodePeg.EMPTY_VALUE ? '?' : ''}</span>
+        onClick={isClickable ? () => onClick(value) : () => false}></span>
     );
   }
 }

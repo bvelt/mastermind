@@ -6,11 +6,9 @@ import './SinglePlayer.css';
 class SinglePlayer extends React.Component {
   render() {
     return (
-      <div className="singlePlayer clearfix">
-        <div className="column sidebar">
-          <Rules></Rules>
-        </div>
-        <div className="column main">
+      <div>
+        <Rules></Rules>
+        <div className="content">
           <DecodeEditor></DecodeEditor>
         </div>
       </div>

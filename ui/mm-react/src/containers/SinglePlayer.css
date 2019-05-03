@@ -3,6 +3,11 @@
   padding: 0;
 }
 
+.content {
+  max-width: 400px;
+  margin: auto;
+}
+
 .clearfix::after {
   content: "";
   clear: both;

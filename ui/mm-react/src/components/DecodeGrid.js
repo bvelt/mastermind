@@ -4,6 +4,7 @@ import CodePeg from './CodePeg';
 import KeyPegGrid from './KeyPegGrid';
 import './DecodeGrid.css';
 
+
 class DecodeGrid extends React.Component {
   static propTypes = {
     remainingGuessCount: PropTypes.number,
@@ -22,6 +23,10 @@ class DecodeGrid extends React.Component {
     for (let i = 0; i < guesses.length; i++) {
       const tds = [];
 
+      tds.push(
+        <td key={`h$(i}`} className="rowHead">{i + 1}</td>
+      );
+
       for (let j = 0; j < guesses[i].length; j++) {
         tds.push(
           <td key={`cp${j}`}><CodePeg value={guesses[i][j]}></CodePeg></td>
@@ -34,17 +39,19 @@ class DecodeGrid extends React.Component {
 
       const solution = keys[i].every(key => key === 0);
       trs.push(
-        <tr className={solution === true ? 'solution' : ''} key={i}>{tds}</tr>
+        <tr className={`decodeRow ${solution === true ? 'solution' : ''}`} key={i}>{tds}</tr>
       );
     }
 
     return (
-      <table className="decodeGrid">
-        <caption>{remainingGuessCount} guess{remainingGuessCount !== 1 ? 'es' : ''} remaining</caption>
-        <tbody>
-          {trs}
-        </tbody>
-      </table>
+      <div className="decodeGrid">
+        <p className="caption">{remainingGuessCount} guess{remainingGuessCount !== 1 ? 'es' : ''} remaining</p>
+        <table>
+          <tbody>
+            {trs}
+          </tbody>
+        </table>
+      </div>
     );
   }
 }

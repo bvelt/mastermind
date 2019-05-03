@@ -15,5 +15,7 @@ storiesOf('CodePegList', module)
     return (<CodePegList values={Array(4).fill(CodePeg.EMPTY_VALUE)}></CodePegList>);
   })
   .add('selectable items', () => {
-    return (<CodePegList isSelectable={true} onSelect={action('onSelect')}></CodePegList>);
+    return (<CodePegList isSelectable={true}
+      onSelect={value => action('onSelect')(value)}
+      onCheck={action('onCheck')}></CodePegList>);
   });   

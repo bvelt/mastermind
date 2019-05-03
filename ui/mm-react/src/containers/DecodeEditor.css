@@ -5,3 +5,27 @@
   padding: 0;
   margin: 0 0 8px 0;
 }
+
+.codePegList {
+  float: left;
+}
+
+.decodeGrid {
+  float: left;
+}
+
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.gameover {
+  width: 300px;
+  margin-left: auto;
+}
+
+.gameover p {
+  display: inline-block;
+  margin: 8px 8px 0 24px;
+}

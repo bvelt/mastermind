@@ -1,11 +1,30 @@
+
 .codePegList {
+  margin: 2px;
+  padding: 4px;
+  width: 52px;
+}
+
+.codePegList ul.picker {
   list-style-type: none;
   margin: 0;
-  padding: 0;
+  padding: 8px 2px;
+  background-color: white;
+  border-radius: 16px 0 16px 0;
+}
+
+.codePegList ul.buttons {
+  list-style-type: none;
+  margin: 16px 0;
+  padding: 8px 2px;
 }
 
 .codePegList li {
-  display: inline-block;
-  padding: 3px 3px 0 0;
+  padding: 4px;
+  margin: 0;
+}
+
+.codePegList li.check {
+  padding-top: 8px;
   margin: 0;
 }

@@ -112,47 +112,47 @@ class DecodeEditor extends React.Component {
     let ks = Array.from(prevKeys);
 
     const active = !broken && prevGuesses.length < maximumGuessCount;
-    let message = "Congratualations! You broke the code.";
+    let message = "You broke the code!";
 
     if (!active && !broken) {
       gs.push(code);
       ks.push(Array(length).fill(0));
-      message = "Bummer. You failed to break the code.";
+      message = "Bummer. You failed.";
     } else if (active) {
       gs.push(this.padRight(nextGuess, length, CodePeg.defaultValue()));
       ks.push(Array(length).fill(KeyPeg.defaultValue()));
-      message = `Guess secret code of ${length} colored pegs`;
     }
 
-    const newGameButton = [];
+    while (gs.length < maximumGuessCount) {
+      gs.push(Array(length).fill(CodePeg.defaultValue()));
+      ks.push(Array(length).fill(KeyPeg.defaultValue()));
+    }
+
+    let newGameButton = '';
     if (!active) {
-      newGameButton.push(
-        <Button key={7} label="New Game" onClick={this.handleNewGame}></Button>
+      newGameButton = (
+        <div className="gameover">
+          <p>{message}</p>
+          <Button key={7} label="TRY AGAIN" onClick={this.handleNewGame}></Button>
+        </div>
       );
     }
 
     return (
       <div className="decodeEditor">
-        <p>{message}</p>
-        <CodePegList key={1} values={[...CodePeg.colors().keys()]}
-          isSelectable={active && nextGuess.length < length}
-          onSelect={this.handleSelect}></CodePegList>
-        <Button key={2} label="Random"
-          isDisabled={!active}
-          onClick={this.handleRandom}></Button>
-        <Button key={3} label="Reset"
-          isDisabled={!active || nextGuess.length === 0}
-          onClick={this.handleReset}></Button>
-        <Button key={4} label="Delete"
-          isDisabled={!active || nextGuess.length === 0}
-          onClick={this.handleDelete}></Button>
-        <Button key={5} label="Check"
-          isDisabled={!active || nextGuess.length < length}
-          onClick={this.handleCheck}></Button>
-        <DecodeGrid key={6}
-          remainingGuessCount={maximumGuessCount - prevGuesses.length}
-          guesses={gs}
-          keys={ks}></DecodeGrid>
+        <div className="clearfix">
+          <CodePegList key={1} values={[...CodePeg.colors().keys()]}
+            isSelectable={active && nextGuess.length < length}
+            onSelect={this.handleSelect}
+            onCheck={this.handleCheck}
+            onDelete={this.handleDelete}
+            onRandom={this.handleRandom}
+            onReset={this.handleReset}></CodePegList>
+          <DecodeGrid key={6}
+            remainingGuessCount={maximumGuessCount - prevGuesses.length}
+            guesses={gs}
+            keys={ks}></DecodeGrid>
+        </div>
         {newGameButton}
       </div>
     );
