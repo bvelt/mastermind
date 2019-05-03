@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/mastermind/static/css/main.bde09196.chunk.css",
-    "main.js": "/mastermind/static/js/main.c22bce66.chunk.js",
-    "main.js.map": "/mastermind/static/js/main.c22bce66.chunk.js.map",
+    "main.css": "/mastermind/static/css/main.5050891c.chunk.css",
+    "main.js": "/mastermind/static/js/main.4a38c507.chunk.js",
+    "main.js.map": "/mastermind/static/js/main.4a38c507.chunk.js.map",
     "runtime~main.js": "/mastermind/static/js/runtime~main.004a5c91.js",
     "runtime~main.js.map": "/mastermind/static/js/runtime~main.004a5c91.js.map",
     "static/js/2.be7e2e20.chunk.js": "/mastermind/static/js/2.be7e2e20.chunk.js",
     "static/js/2.be7e2e20.chunk.js.map": "/mastermind/static/js/2.be7e2e20.chunk.js.map",
     "index.html": "/mastermind/index.html",
-    "precache-manifest.306804e241efd37a9fb32d2b8e3f4111.js": "/mastermind/precache-manifest.306804e241efd37a9fb32d2b8e3f4111.js",
+    "precache-manifest.ae508d835bd99f7bfe579693a854e5a9.js": "/mastermind/precache-manifest.ae508d835bd99f7bfe579693a854e5a9.js",
     "service-worker.js": "/mastermind/service-worker.js",
-    "static/css/main.bde09196.chunk.css.map": "/mastermind/static/css/main.bde09196.chunk.css.map"
+    "static/css/main.5050891c.chunk.css.map": "/mastermind/static/css/main.5050891c.chunk.css.map"
   }
 }
