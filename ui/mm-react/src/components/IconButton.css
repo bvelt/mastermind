@@ -1,0 +1,25 @@
+.iconButton {
+  height: 40px;
+  width: 40px;
+  color: #262626;
+  background-color: #ffffff;
+  border: 1px solid #d9d9d9;
+  border-radius: 50%;
+  display: inline-block;
+  cursor: pointer;
+  outline: none;
+}
+
+.iconButton.check {
+  color: #ffffff;
+  background-color: #262626;
+}
+
+.iconButton__disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.iconButton:hover:not(.iconButton__disabled) {
+  border: 1px solid #bfbfbf;
+}
