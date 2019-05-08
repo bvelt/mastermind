@@ -36,19 +36,16 @@ class CodePegList extends React.Component {
         </li>
       );
     }
-    items.push(
-      <li key={values.length} className={'check'}>
-        <IconButton icon={'check'}
-          isDisabled={isSelectable}
-          onClick={onCheck}></IconButton>
-      </li>
-    );
-
 
     return (
       <div className="codePegList">
         <ul className="picker">
           {items}
+          <li key={values.length} className={'check'}>
+            <IconButton icon={'check'}
+              isDisabled={isSelectable}
+              onClick={onCheck}></IconButton>
+          </li>
         </ul>
         <ul className="buttons">
           <li>

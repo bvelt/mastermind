@@ -19,6 +19,7 @@ class IconButton extends React.Component {
     } = this.props;
     return (
       <button type={'button'}
+        title={icon}
         className={`iconButton ${icon} ${isDisabled ? 'iconButton__disabled' : ''}`}
         disabled={isDisabled}
         onClick={!isDisabled ? onClick : () => false}>
