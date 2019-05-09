@@ -6,14 +6,12 @@
 
 .rulesToggle {
   cursor: pointer;
-  font-size: 16px;
-  line-height: 24px;
+  font-size: 14px;
   color: #595959;
 }
 
 .rules p {
   font-size: 14px;
-  line-height: 20px;
   color: #595959;
   margin: 5px 0 0 0;
   display: inline-block;

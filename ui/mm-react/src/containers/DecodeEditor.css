@@ -14,12 +14,6 @@
   float: right;
 }
 
-.clearfix::after {
-  content: "";
-  clear: both;
-  display: table;
-}
-
 .gameover .message {
   float: right;
   margin: 16px 8px;
