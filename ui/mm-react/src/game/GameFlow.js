@@ -30,12 +30,12 @@ class GameFlow {
 
   checkGuess() {
     const breaker = new CodeBreaker(this.state.settings);
-    const key = breaker.checkGuess(this.state.code, this.state.nextGuess);
-    const broken = key.every(k => k === CodeBreaker.MATCH_KEYS.position);
+    const answer = breaker.checkGuess(this.state.code, this.state.nextGuess);
+    const broken = answer[0] === this.state.settings.codeLength;
     this.state = Object.assign({}, this.state, {
       nextGuess: [],
       prevGuesses: this.copyAndPush(this.state.prevGuesses, this.state.nextGuess),
-      prevKeys: this.copyAndPush(this.state.prevKeys, key),
+      prevAnswers: this.copyAndPush(this.state.prevAnswers, answer),
       broken: broken
     });
   }

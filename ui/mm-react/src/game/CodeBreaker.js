@@ -2,12 +2,6 @@ import defaultSettings from './GameSettings';
 
 class CodeBreaker {
 
-  static MATCH_KEYS = {
-    position: 0,
-    color: 1,
-    none: 2
-  }
-
   constructor(settings = defaultSettings) {
     this.settings = settings;
   }
@@ -17,13 +11,13 @@ class CodeBreaker {
       throw new Error(`Guess length ${guess.length} must be equal to code length ${code.length}`);
     }
 
-    let key = [];
-    let xs = [];
-    let ys = [];
+    const answer = [0, 0];
+    const xs = [];
+    const ys = [];
 
     for (let i = 0; i < code.length; i++) {
       if (code[i] === guess[i]) {
-        key.push(CodeBreaker.MATCH_KEYS.position);
+        answer[0]++;
       } else {
         xs.push(code[i]);
         ys.push(guess[i]);
@@ -35,7 +29,7 @@ class CodeBreaker {
       for (let i = 0; i < ys.length; i++) {
         let y = ys.shift();
         if (x === y) {
-          key.push(CodeBreaker.MATCH_KEYS.color);
+          answer[1]++;
           break;
         } else {
           ys.push(y);
@@ -43,11 +37,7 @@ class CodeBreaker {
       }
     }
 
-    while (key.length < code.length) {
-      key.push(CodeBreaker.MATCH_KEYS.none);
-    }
-
-    return key;
+    return answer;
   }
 }
 

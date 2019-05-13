@@ -17,7 +17,7 @@ class DecodeEditor extends React.Component {
     maximumGuessCount: PropTypes.number,
     length: PropTypes.number,
     prevGuesses: PropTypes.array,
-    prevKeys: PropTypes.array,
+    prevAnswers: PropTypes.array,
     onDecodeDone: PropTypes.func
   };
 
@@ -104,28 +104,28 @@ class DecodeEditor extends React.Component {
       length,
       nextGuess,
       prevGuesses,
-      prevKeys,
+      prevAnswers,
       broken
     } = this.props;
 
-    let gs = Array.from(prevGuesses);
-    let ks = Array.from(prevKeys);
+    let guesses = Array.from(prevGuesses);
+    let answers = Array.from(prevAnswers);
 
     const active = !broken && prevGuesses.length < maximumGuessCount;
     let message = "You broke the code!";
 
     if (!active && !broken) {
-      gs.push(code);
-      ks.push(Array(length).fill(0));
+      guesses.push(code);
+      answers.push([4, 0]);
       message = "Bummer. You failed.";
     } else if (active) {
-      gs.push(this.padRight(nextGuess, length, CodePeg.defaultValue()));
-      ks.push(Array(length).fill(KeyPeg.defaultValue()));
+      guesses.push(this.padRight(nextGuess, length, CodePeg.defaultValue()));
+      answers.push([0, 0]);
     }
 
-    while (gs.length < maximumGuessCount) {
-      gs.push(Array(length).fill(CodePeg.defaultValue()));
-      ks.push(Array(length).fill(KeyPeg.defaultValue()));
+    while (guesses.length < maximumGuessCount) {
+      guesses.push(Array(length).fill(CodePeg.defaultValue()));
+      answers.push([0, 0]);
     }
 
     let newGameButton = '';
@@ -137,7 +137,7 @@ class DecodeEditor extends React.Component {
               <Button key={7} label="TRY AGAIN" onClick={this.handleNewGame}></Button>
             </div>
             <div className="message">
-              <span className="emoji" role="img" 
+              <span className="emoji" role="img"
                 aria-label="Face">{broken === true ? '😃' : '🙁'}</span>
               <span className="text">{message}</span>
             </div>
@@ -151,8 +151,8 @@ class DecodeEditor extends React.Component {
         <div className="clearfix">
           <DecodeGrid key={6}
             remainingGuessCount={maximumGuessCount - prevGuesses.length}
-            guesses={gs}
-            keys={ks}></DecodeGrid>
+            guesses={guesses}
+            answers={answers}></DecodeGrid>
           <CodePegList key={1} values={[...CodePeg.colors().keys()]}
             isSelectable={active && nextGuess.length < length}
             onSelect={this.handleSelect}
@@ -174,7 +174,7 @@ const mapStateToProps = state => {
     maximumGuessCount: state.settings.maximumGuessCount,
     length: state.settings.codeLength,
     prevGuesses: state.prevGuesses,
-    prevKeys: state.prevKeys,
+    prevAnswers: state.prevAnswers,
     broken: state.broken
   };
 }

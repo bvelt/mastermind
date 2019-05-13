@@ -7,6 +7,6 @@ storiesOf('KeyPegGrid', module)
   .add('default', () => (
     <KeyPegGrid></KeyPegGrid>
   ))
-  .add('with values [0, 0, 1, 2]', () => (
-    <KeyPegGrid values={[0, 0, 1, 2]}></KeyPegGrid>
+  .add('with answer [2, 1]', () => (
+    <KeyPegGrid answer={[2, 1]}></KeyPegGrid>
   ));   

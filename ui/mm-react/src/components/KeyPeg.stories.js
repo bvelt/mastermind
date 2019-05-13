@@ -5,10 +5,10 @@ import '../index.css';
 
 storiesOf('KeyPeg', module)
   .add('match position', () => (
-    <KeyPeg value={KeyPeg.KEY_NAMES.indexOf('position')}></KeyPeg>
+    <KeyPeg value={KeyPeg.valueOf('position')}></KeyPeg>
   ))
   .add('match color', () => (
-    <KeyPeg value={KeyPeg.KEY_NAMES.indexOf('color')}></KeyPeg>
+    <KeyPeg value={KeyPeg.valueOf('color')}></KeyPeg>
   ))
   .add('no match', () => (
     <KeyPeg></KeyPeg>

@@ -45,7 +45,7 @@ describe('GameFlow', () => {
     expect(flow.state.broken).toEqual(true);
     expect(flow.state.nextGuess).toEqual([]);
     expect(flow.state.prevGuesses).toEqual([state.code]);
-    expect(flow.state.prevKeys).toEqual([[0, 0, 0, 0]]);
+    expect(flow.state.prevAnswers).toEqual([[4, 0]]);
   });
   test('should remove guess token', () => {
     const state = new GameState();
@@ -72,7 +72,7 @@ describe('GameFlow', () => {
     expect(flow.state.code).toHaveLength(4);
     expect(flow.state.nextGuess).toEqual([]);
     expect(flow.state.prevGuesses).toEqual([]);
-    expect(flow.state.prevKeys).toEqual([]);
+    expect(flow.state.prevAnswers).toEqual([]);
     expect(flow.state.broken).toEqual(false);
   });
   test('should create random guess', () => {

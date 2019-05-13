@@ -9,14 +9,14 @@ class DecodeGrid extends React.Component {
   static propTypes = {
     remainingGuessCount: PropTypes.number,
     guesses: PropTypes.array,
-    keys: PropTypes.array,
+    answers: PropTypes.array,
   };
 
   render() {
     const {
       remainingGuessCount = 0,
       guesses = [],
-      keys = []
+      answers = []
     } = this.props;
 
     const trs = [];
@@ -34,10 +34,10 @@ class DecodeGrid extends React.Component {
       }
 
       tds.push(
-        <td key={`kg${i}`} className="keys"><KeyPegGrid values={keys[i]}></KeyPegGrid></td>
+        <td key={`kg${i}`} className="keys"><KeyPegGrid answer={answers[i]} length={guesses[i].length}></KeyPegGrid></td>
       );
 
-      const solution = keys[i].every(key => key === 0);
+      const solution = answers[i][0] === guesses[i].length;
       trs.push(
         <tr className={`decodeRow ${solution === true ? 'solution' : ''}`} key={i}>{tds}</tr>
       );
