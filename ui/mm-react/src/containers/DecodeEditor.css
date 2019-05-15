@@ -6,19 +6,23 @@
   margin: 0 0 8px 0;
 }
 
-.codePegList {
-  float: right;
+.decodeEditor .codePegList {
+  float: left;
 }
 
-.decodeGrid {
-  float: right;
+.decodeEditor .decodeGrid {
+  float: left;
 }
 
-.gameover .message {
-  float: right;
-  margin: 16px 8px;
+.decodeEditor .assist {
+  float: left;
 }
 
-.gameover .buttons {
-  float: right;
+.decodeEditor .gameover .message {
+  float: left;
+  margin: 16px 8px 0 62px;
+}
+
+.decodeEditor .gameover .buttons {
+  float: left;
 }

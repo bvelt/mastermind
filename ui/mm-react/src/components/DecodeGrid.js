@@ -4,7 +4,6 @@ import CodePeg from './CodePeg';
 import KeyPegGrid from './KeyPegGrid';
 import './DecodeGrid.css';
 
-
 class DecodeGrid extends React.Component {
   static propTypes = {
     remainingGuessCount: PropTypes.number,

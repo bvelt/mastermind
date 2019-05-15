@@ -85,19 +85,12 @@ class CodeEditor extends React.Component {
         <p>Create a secret pattern of {length} four colored pegs</p>
         <CodePegList values={[...CodePeg.colors().keys()]}
           isSelectable={values.length < length}
-          onSelect={this.handleCodePegClick}></CodePegList>
+          onSelect={this.handleCodePegClick}
+          onCheck={this.handleDone}
+          onDelete={this.handleDelete}
+          onRandom={this.handleRandom}
+          onReset={this.handleReset}></CodePegList>
         <CodePegList values={paddedValues}></CodePegList>
-        <Button label="Random"
-          onClick={this.handleRandom}></Button>
-        <Button label="Reset"
-          isDisabled={values.length === 0}
-          onClick={this.handleReset}></Button>
-        <Button label="Delete"
-          isDisabled={values.length === 0}
-          onClick={this.handleDelete}></Button>
-        <Button label="Save"
-          isDisabled={values.length < length}
-          onClick={this.handleDone}></Button>
       </div>
     );
   }
