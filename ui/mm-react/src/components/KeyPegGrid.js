@@ -23,22 +23,17 @@ class KeyPegGrid extends React.Component {
       values.unshift(KeyPeg.valueOf('position'));
     }
 
-    const rows = [];
-    for (let i = 0; i < length; i += 2) {
-      rows.push(
-        <tr key={i}>
-          <td><KeyPeg value={values[i]}></KeyPeg></td>
-          <td><KeyPeg value={values[i + 1]}></KeyPeg></td>
-        </tr>
+    const items = [];
+    for (let i = 0; i < length; i++) {
+      items.push(
+        <li key={i}><KeyPeg value={values[i]}></KeyPeg></li>
       );
     }
 
     return (
-      <table className="keyPegGrid">
-        <tbody>
-          {rows}
-        </tbody>
-      </table>
+      <ul className="keyPegGrid">
+        {items}
+      </ul>
     );
   }
 }

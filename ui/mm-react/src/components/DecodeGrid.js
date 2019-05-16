@@ -44,7 +44,7 @@ class DecodeGrid extends React.Component {
 
     return (
       <div className="decodeGrid">
-        <p className="caption">{remainingGuessCount} guess{remainingGuessCount !== 1 ? 'es' : ''} remaining</p>
+        <h2>{remainingGuessCount} guess{remainingGuessCount !== 1 ? 'es' : ''} remaining</h2>
         <table>
           <tbody>
             {trs}

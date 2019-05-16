@@ -17,9 +17,7 @@
   border: 1px solid var(--code-peg-border);
   border-radius: 50%;
   display: inline-block;
-  text-align: center;
   vertical-align: middle;
-  font-size: 28px;
 }
 
 .codePeg__selectable {

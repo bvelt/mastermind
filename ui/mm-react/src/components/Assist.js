@@ -8,6 +8,7 @@ class Assist extends React.Component {
   static propTypes = {
     possibleCodes: PropTypes.array
   };
+
   render() {
     const {
       possibleCodes = []
@@ -27,8 +28,9 @@ class Assist extends React.Component {
       ));
     }
 
+    const maxrows = 100;
     const lis = [];
-    for (let i = 0; i < possibleCodes.length; i++) {
+    for (let i = 0; i < possibleCodes.length && i < maxrows; i++) {
       lis.push((
         <li key={i}>
           {possibleCodes[i].map((x, j) =>
@@ -40,25 +42,30 @@ class Assist extends React.Component {
 
     return (
       <div className="assist">
-        <p>Possible codes remaining {possibleCodes.length}</p>
-        <table>
-          <thead>
-            <tr>
-              <td>column</td>
-              <td>1</td>
-              <td>2</td>
-              <td>3</td>
-              <td>4</td>
-              <td>*</td>
-            </tr>
-          </thead>
-          <tbody>
-            {rows}
-          </tbody>
-        </table>
-        <ul>
-          {lis}
-        </ul>
+        <div>
+          <h2>Possible codes with color at index</h2>
+          <table>
+            <thead>
+              <tr>
+                <td></td>
+                <td>1</td>
+                <td>2</td>
+                <td>3</td>
+                <td>4</td>
+                <td>(1,4)</td>
+              </tr>
+            </thead>
+            <tbody>
+              {rows}
+            </tbody>
+          </table>
+        </div>
+        <div>
+          <h2>{Math.min(possibleCodes.length, 100)}/{possibleCodes.length} of possible codes</h2>
+          <ul>
+            {lis}
+          </ul>
+        </div>
       </div>
     );
   }
