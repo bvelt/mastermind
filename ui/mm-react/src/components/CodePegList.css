@@ -1,22 +1,27 @@
-
 .codePegList {
-  margin: 2px;
-  padding: 4px;
-  width: 52px;
+  display: inline-block;
+  margin: 4px 4px 4px 6px;
+  padding: 0;
+  vertical-align: top;
+}
+
+.codePegList ul {
+  list-style-type: none;
+  width: -moz-min-content;
+  width: -webkit-min-content;
+  width: min-content;
 }
 
 .codePegList ul.picker {
-  list-style-type: none;
   margin: 0;
-  padding: 4px 4px;
+  padding: 4px 2px 4px 2px;
   background-color: white;
   border-radius: 16px 0 16px 0;
 }
 
 .codePegList ul.buttons {
-  list-style-type: none;
   margin: 0;
-  padding: 8px 2px;
+  padding: 4px 2px 2px 2px;
 }
 
 .codePegList li {

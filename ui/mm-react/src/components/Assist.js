@@ -2,17 +2,45 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import GameCombinatorics from '../game/GameCombinatorics';
 import CodePeg from './CodePeg';
+import IconButton from './IconButton';
 import './Assist.css';
 
 class Assist extends React.Component {
   static propTypes = {
+    opened: PropTypes.bool,
+    onToggle: PropTypes.func,
     possibleCodes: PropTypes.array
   };
+  constructor(props) {
+    super(props);
+    this.handleToggle = this.handleToggle.bind(this);
+    this.state = {
+      opened: props.opened || false
+    };
+  }
+
+  handleToggle() {
+    const {
+      onToggle = () => false
+    } = this.props;
+    const {
+      opened
+    } = this.state;
+    const nextOpened = opened === false;
+    this.setState(() => {
+      return Object.assign({}, this.state,
+        { opened: nextOpened });
+    });
+    onToggle(nextOpened);
+  }
 
   render() {
     const {
       possibleCodes = []
     } = this.props;
+    const {
+      opened
+    } = this.state;
 
     const comb = new GameCombinatorics();
     const pivot = comb.pivot(possibleCodes);
@@ -28,7 +56,7 @@ class Assist extends React.Component {
       ));
     }
 
-    const maxrows = 100;
+    const maxrows = 50;
     const lis = [];
     for (let i = 0; i < possibleCodes.length && i < maxrows; i++) {
       lis.push((
@@ -41,31 +69,41 @@ class Assist extends React.Component {
     }
 
     return (
-      <div className="assist">
-        <div>
-          <h2>Possible codes with color at index</h2>
+      <div className="assistWrap">
+        <div className={`${opened === false ? 'toggleButton' : 'toggleHidden'}`}>
+          {opened === false ?
+            <IconButton icon={'info'} onClick={this.handleToggle}></IconButton> : <span></span>}
+        </div>
+        <div className={`assist ${opened === false ? 'closed' : ''}`}>
           <table>
             <thead>
               <tr>
-                <td></td>
-                <td>1</td>
-                <td>2</td>
-                <td>3</td>
-                <td>4</td>
-                <td>(1,4)</td>
+                <td>COLOR</td>
+                <td><CodePeg></CodePeg></td>
+                <td><CodePeg></CodePeg></td>
+                <td><CodePeg></CodePeg></td>
+                <td><CodePeg></CodePeg></td>
+                <td>TOTAL</td>
               </tr>
             </thead>
             <tbody>
               {rows}
             </tbody>
+            <tfoot>
+              <tr className="total">
+                <td colSpan="5">Possible codes remaining:</td>
+                <td>{possibleCodes.length}</td>
+              </tr>
+            </tfoot>
           </table>
-        </div>
-        <div>
-          <h2>{Math.min(possibleCodes.length, 100)}/{possibleCodes.length} of possible codes</h2>
-          <ul>
+          <ul className="possible">
             {lis}
           </ul>
         </div>
+        {opened === true ?
+          (<div className="toggleButton">
+            <IconButton icon={'close'} onClick={this.handleToggle}></IconButton>
+          </div>) : ''}
       </div>
     );
   }

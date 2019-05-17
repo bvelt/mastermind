@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import CodePeg from '../components/CodePeg';
-import Button from '../components/Button';
 import CodePegList from '../components/CodePegList';
 import * as actions from '../actions/ActionCreators';
 import './CodeEditor.css';
@@ -63,7 +62,6 @@ class CodeEditor extends React.Component {
 
   handleDone() {
     const {
-      values,
       dispatch
     } = this.props;
     dispatch(actions.saveCode());

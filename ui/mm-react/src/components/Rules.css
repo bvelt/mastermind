@@ -1,10 +1,7 @@
-.rules {
-  margin: 4px;
-  padding: 0;
-  float: left;
-}
-
 .rulesToggle {
+  position: absolute;
+  top: 16px;
+  right: 16px;
   cursor: pointer;
   font-size: 14px;
   color: #595959;
@@ -13,14 +10,9 @@
 .rules p {
   font-size: 14px;
   color: #595959;
-  margin: 5px 0 0 0;
-  display: inline-block;
+  margin: 4px 2px 2px 4px;
 }
 
-.rules p.Hide {
+.rules p.hide {
   display: none;
-}
-
-.rules p.Show {
-  display: visible;
 }

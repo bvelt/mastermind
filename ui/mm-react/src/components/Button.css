@@ -11,6 +11,7 @@
   outline: none;
   margin: 8px 0 0 0;
   color: #ffffff;
+  border: 0;
 }
 
 .button__disabled {

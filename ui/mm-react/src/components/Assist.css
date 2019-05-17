@@ -1,56 +1,79 @@
-.assist {
-  margin: 6px 0 0 6px;
-  background-color: #ffffff;
-  padding: 4px 8px 4px 8px;
-  height: 462px;
-  border-radius: 0 24px 0 0;
+:root {
+  --assist-bg-color: #F2F3F8;
+  --assist-border-color: #CACAD2;
 }
 
-.assist h2 {
-  font-size: 14px;
-  font-weight: normal;
-  color: #595959d0;
-  text-align: center;
-  padding: 4px 8px;
-  margin: 4px;
-  border-radius: 24px;
-  background-color: #F2F3F8;
+.assistWrap .closed {
+  display: none;
+}
+
+.assistWrap {
+  margin: 4px 0 4px 0;
+}
+
+.assistWrap .iconButton {
+  background-color: var(--assist-bg-color);
+  border-color: var(--assist-bg-color);
+}
+
+.assistWrap .iconButton:hover {
+  border-color: var(--assist-bg-color);
+}
+
+.assistWrap .toggleButton {
+  display: inline-block;
+  vertical-align: top;
+  border: 1px solid var(--assist-bg-color);
+  background-color: var(--assist-bg-color);
+  padding-left:  24px;
+  margin-left: -20px;
+  position: relative;
+  border-radius: 0 8px 8px 0;
+  z-index: 5;
+  min-height: 40px;
+}
+
+.assistWrap .toggleHidden {
+  display: inline-block;
+  vertical-align: top;
+  border: 1px solid var(--assist-border-color);
+  background-color: var(--assist-bg-color);
+  border-right: 0;
+  border-bottom: 0;
+  padding-left:  24px;
+  margin-left: -20px;
+  position: relative;
+  border-radius: 0;
+  z-index: 5;
+  min-height: 40px;
+}
+
+.assist {
+  margin: 0;
+  padding: 4px 8px 4px 8px;
+  border: 1px solid var(--assist-border-color);
+  display: inline-block;
+  background-color: var(--assist-bg-color);
+  border-left: 0;
+  border-radius: 0 24px 24px 24px;
+  width: -moz-min-content;
+  width: -webkit-min-content;
+  width: min-content;
+  position: relative;
+  z-index: 10;
 }
 
 .assist table {
+  display: inline-block;
   border-collapse: collapse;
-  font-size: 14px;
-  color: #9E9E9E;
+}
+
+.assist td {
+  padding: 4px 4px;
   text-align: right;
-  margin-bottom: 12px;
-}
-
-.assist td {
-  width: 26px;
-}
-
-.assist thead tr {
-  border-bottom: 1px solid #9E9E9E;
-}
-
-.assist thead td:first-child {
-  color: #595959d0;
-  text-align: center
-}
-
-.assist tbody tr:not(:last-child) {
-  border-bottom: 1px solid #D8D8D8;
-}
-
-.assist .codePeg {
-  width: 12px;
-  height: 12px;
-  border: 0px;
-  margin: 1px;
-}
-
-.assist td {
-  padding: 2px 4px;
+  font-size: 14px;
+  font-weight: 400;
+  color: #515151;
 }
 
 .assist td:first-child {
@@ -58,13 +81,74 @@
 }
 
 .assist td:last-child {
-  border-left: 1px solid #595959d0;
+  border-left: 1px solid #C3C5CF;
+}
+
+.assist thead td {
+  font-size: 8px;
+  font-weight: 600;
+  color: #515151;
+  text-align: center
+}
+
+.assist thead .codePeg__empty {
+  background-color: #E1E2E7;
+  height: 32px;
+  width: 32px;
+  margin: 0;
+  border: 0;
+}
+
+.assist thead tr {
+  border-bottom: 1px solid #C3C5CF;
+}
+
+.assist tbody .codePeg {
+  width: 24px;
+  height: 24px;
+  margin: 0;
+  border: 0;
+}
+
+.assist .total td:not(:last-child) {
+  font-size: 14px;
+  font-weight: 500;
+  color: #000000;
+  text-align: left;
+  padding: 8px 4px;
+  margin: 0;
+  border-radius: 8px 0 0 8px;
+  text-indent: 8px;
+  background-color: #E1E2E7;
+}
+
+.assist .total td:last-child {
+  font-size: 16px;
+  font-weight: 500;
+  color: #ffffff;
+  text-align: right;
+  padding: 8px 4px;
+  margin: 0;
+  background-color: #000000;
+}
+
+.assist tbody tr:not(:last-child) {
+  border-bottom: 1px solid #E1E2E7;
 }
 
 .assist ul {
-  padding-left: 16px;
-  height: 216px;
-  font-size: 14px;
-  color: #9E9E9E;
-  overflow: scroll;
+  list-style-type: none;
+  margin: 0;
+  padding: 4px 0 12px 4px;
+}
+
+.assist li {
+  display: inline-block;
+  padding: 4px 12px 0 0;
+}
+
+.assist .possible .codePeg {
+  width: 6px;
+  height: 6px;
+  margin: 2px;
 }
