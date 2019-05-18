@@ -4,6 +4,7 @@
   "private": true,
   "homepage": "https://bvelt.github.io/mastermind",
   "dependencies": {
+    "applied-combinatorics": "^1.0.0",
     "core-js": "3",
     "gh-pages": "^2.0.1",
     "react": "^16.8.6",

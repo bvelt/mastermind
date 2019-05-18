@@ -33,7 +33,9 @@ class DecodeGrid extends React.Component {
       }
 
       tds.push(
-        <td key={`kg${i}`} className="keys"><KeyPegGrid answer={answers[i]} length={guesses[i].length}></KeyPegGrid></td>
+        <td key={`kg${i}`} className="keys">
+          <KeyPegGrid answer={answers[i]} length={guesses[i].length}></KeyPegGrid>
+        </td>
       );
 
       const solution = answers[i][0] === guesses[i].length;

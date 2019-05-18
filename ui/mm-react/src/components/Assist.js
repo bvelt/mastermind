@@ -11,6 +11,7 @@ class Assist extends React.Component {
     onToggle: PropTypes.func,
     possibleCodes: PropTypes.array
   };
+
   constructor(props) {
     super(props);
     this.handleToggle = this.handleToggle.bind(this);
@@ -56,9 +57,9 @@ class Assist extends React.Component {
       ));
     }
 
-    const maxrows = 50;
+    const maxCodes = 50;
     const lis = [];
-    for (let i = 0; i < possibleCodes.length && i < maxrows; i++) {
+    for (let i = 0; i < possibleCodes.length && i < maxCodes; i++) {
       lis.push((
         <li key={i}>
           {possibleCodes[i].map((x, j) =>
@@ -72,7 +73,7 @@ class Assist extends React.Component {
       <div className="assistWrap">
         <div className={`${opened === false ? 'toggleButton' : 'toggleHidden'}`}>
           {opened === false ?
-            <IconButton icon={'info'} onClick={this.handleToggle}></IconButton> : <span></span>}
+            <IconButton icon={'info'} onClick={this.handleToggle}></IconButton> : ''}
         </div>
         <div className={`assist ${opened === false ? 'closed' : ''}`}>
           <table>
