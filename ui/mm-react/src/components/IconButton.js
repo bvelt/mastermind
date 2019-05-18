@@ -23,7 +23,6 @@ class IconButton extends React.Component {
         className={`iconButton ${icon} ${isDisabled ? 'iconButton__disabled' : ''}`}
         disabled={isDisabled}
         onClick={!isDisabled ? onClick : () => false}>
-        <img src={`assets/${icon}.png`} alt={icon}/>
       </button>
     );
   }
