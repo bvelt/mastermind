@@ -2,6 +2,7 @@ import React from 'react';
 import { Provider } from 'react-redux'
 import { createStore } from 'redux'
 import Header from './components/Header';
+import Footer from './components/Footer';
 import SinglePlayer from './containers/SinglePlayer';
 import gameReducers from './reducers/Reducers';
 import * as actions from './actions/ActionCreators';
@@ -21,6 +22,7 @@ class App extends React.Component {
         <div className="App">
           <Header></Header>
           <SinglePlayer></SinglePlayer>
+          <Footer></Footer>
         </div>
       </Provider>
     );

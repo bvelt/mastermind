@@ -1,9 +1,13 @@
 .keyPegGrid {
-  border-collapse: collapse;
-  border-spacing: 0;
-  margin-left: 4px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  width: 28px;
 }
 
-.keyPegGrid td {
-  padding: 2px 2px 0 0;
+.keyPegGrid li {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  padding: 0 2px 2px 0;
 }

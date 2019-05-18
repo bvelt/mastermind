@@ -8,18 +8,17 @@
   --code-peg-yellow: #FADB14;
   --code-peg-empty: #ffffff;
   --code-peg-border: #D8D8D8;
+  --code-peg-size-large: 38px;
 }
 
 .codePeg {
-  height: 38px;
-  width: 38px;
+  height: var(--code-peg-size-large);
+  width: var(--code-peg-size-large);
   background-color: var(--code-peg-empty);
   border: 1px solid var(--code-peg-border);
   border-radius: 50%;
   display: inline-block;
-  text-align: center;
   vertical-align: middle;
-  font-size: 28px;
 }
 
 .codePeg__selectable {

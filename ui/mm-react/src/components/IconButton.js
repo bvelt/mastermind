@@ -9,7 +9,7 @@ class IconButton extends React.Component {
     onClick: PropTypes.func
   };
 
-  static ICONS = ['check', 'delete', 'random', 'reset'];
+  static ICONS = ['check', 'delete', 'random', 'reset', 'close', 'info'];
 
   render() {
     const {

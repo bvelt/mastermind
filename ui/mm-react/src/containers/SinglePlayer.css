@@ -1,11 +1,13 @@
-.content {
-  max-width: 400px;
-  min-height: 100%;
-  margin: auto;
+.container {
+  margin: 0;
+  padding: 0;
+  width: 100%;
 }
 
-.clearfix::after {
-  content: "";
-  clear: both;
-  display: table;
+@media (min-width: 700px) {
+  .container {
+    width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+  }
 }

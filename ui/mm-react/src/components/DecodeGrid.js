@@ -4,7 +4,6 @@ import CodePeg from './CodePeg';
 import KeyPegGrid from './KeyPegGrid';
 import './DecodeGrid.css';
 
-
 class DecodeGrid extends React.Component {
   static propTypes = {
     remainingGuessCount: PropTypes.number,
@@ -34,7 +33,9 @@ class DecodeGrid extends React.Component {
       }
 
       tds.push(
-        <td key={`kg${i}`} className="keys"><KeyPegGrid answer={answers[i]} length={guesses[i].length}></KeyPegGrid></td>
+        <td key={`kg${i}`} className="keys">
+          <KeyPegGrid answer={answers[i]} length={guesses[i].length}></KeyPegGrid>
+        </td>
       );
 
       const solution = answers[i][0] === guesses[i].length;
@@ -45,7 +46,9 @@ class DecodeGrid extends React.Component {
 
     return (
       <div className="decodeGrid">
-        <p className="caption">{remainingGuessCount} guess{remainingGuessCount !== 1 ? 'es' : ''} remaining</p>
+        <div className="caption">
+          <span>{remainingGuessCount} guess{remainingGuessCount !== 1 ? 'es' : ''} remaining</span>
+        </div>
         <table>
           <tbody>
             {trs}

@@ -1,9 +1,9 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import Header from './Header';
+import Footer from './Footer';
 import '../index.css';
 
-storiesOf('Header', module)
+storiesOf('Footer', module)
   .add(`default`, () => {
-    return (<Header></Header>);
+    return (<Footer></Footer>);
   });   

@@ -1,6 +1,7 @@
 import GameState from './GameState';
 import CodeMaker from './CodeMaker';
 import CodeBreaker from './CodeBreaker';
+import GameCombinatorics from './GameCombinatorics';
 
 class GameFlow {
   constructor(state = new GameState()) {
@@ -29,12 +30,20 @@ class GameFlow {
   }
 
   checkGuess() {
-    const breaker = new CodeBreaker(this.state.settings);
-    const answer = breaker.checkGuess(this.state.code, this.state.nextGuess);
-    const broken = answer[0] === this.state.settings.codeLength;
+    const {
+      settings,
+      code,
+      possibleCodes,
+      nextGuess: guess
+    } = this.state;
+    const breaker = new CodeBreaker(settings);
+    const answer = breaker.checkGuess(code, guess);
+    const broken = answer[0] === settings.codeLength;
+    const combinatorics = new GameCombinatorics(settings);
     this.state = Object.assign({}, this.state, {
+      possibleCodes: combinatorics.filterPermutationsByAnswer(possibleCodes, guess, answer),
       nextGuess: [],
-      prevGuesses: this.copyAndPush(this.state.prevGuesses, this.state.nextGuess),
+      prevGuesses: this.copyAndPush(this.state.prevGuesses, guess),
       prevAnswers: this.copyAndPush(this.state.prevAnswers, answer),
       broken: broken
     });
@@ -51,7 +60,9 @@ class GameFlow {
   newGame() {
     const maker = new CodeMaker(this.state.settings);
     const randomCode = maker.createRandom();
-    this.state = new GameState(this.state.settings, randomCode);
+    const combinatorics = new GameCombinatorics(this.state.settings);
+    const possibleCodes = combinatorics.generatePermutations();
+    this.state = new GameState(this.state.settings, randomCode, possibleCodes);
   }
 
   randomGuess() {

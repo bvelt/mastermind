@@ -6,11 +6,9 @@ import './SinglePlayer.css';
 class SinglePlayer extends React.Component {
   render() {
     return (
-      <div className="singlePlayer">
+      <div className="container">
         <Rules></Rules>
-        <div className="content">
-          <DecodeEditor></DecodeEditor>
-        </div>
+        <DecodeEditor></DecodeEditor>
       </div>
     );
   }

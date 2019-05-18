@@ -3,16 +3,16 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import CodePegList from '../components/CodePegList';
 import CodePeg from '../components/CodePeg';
-import KeyPeg from '../components/KeyPeg';
 import DecodeGrid from '../components/DecodeGrid';
 import Button from '../components/Button';
+import Assist from '../components/Assist';
 import * as actions from '../actions/ActionCreators';
 import './DecodeEditor.css';
 
 class DecodeEditor extends React.Component {
-
   static propTypes = {
     code: PropTypes.array,
+    possibleCodes: PropTypes.array,
     nextGuess: PropTypes.array,
     maximumGuessCount: PropTypes.number,
     length: PropTypes.number,
@@ -100,6 +100,7 @@ class DecodeEditor extends React.Component {
   render() {
     const {
       code,
+      possibleCodes,
       maximumGuessCount,
       length,
       nextGuess,
@@ -132,27 +133,19 @@ class DecodeEditor extends React.Component {
     if (!active) {
       newGameButton = (
         <div className="gameover">
-          <div className="clearfix">
-            <div className="buttons">
-              <Button key={7} label="TRY AGAIN" onClick={this.handleNewGame}></Button>
-            </div>
-            <div className="message">
-              <span className="emoji" role="img"
-                aria-label="Face">{broken === true ? '😃' : '🙁'}</span>
-              <span className="text">{message}</span>
-            </div>
+          <div className="message">
+            <span className="emoji" role="img"
+              aria-label="Face">{broken === true ? '😃' : '🙁'}</span>
+            <span className="text">{message}</span>
           </div>
+          <Button key={7} label="TRY AGAIN" onClick={this.handleNewGame}></Button>
         </div>
       );
     }
 
     return (
       <div className="decodeEditor">
-        <div className="clearfix">
-          <DecodeGrid key={6}
-            remainingGuessCount={maximumGuessCount - prevGuesses.length}
-            guesses={guesses}
-            answers={answers}></DecodeGrid>
+        <div className="c1">
           <CodePegList key={1} values={[...CodePeg.colors().keys()]}
             isSelectable={active && nextGuess.length < length}
             onSelect={this.handleSelect}
@@ -160,8 +153,15 @@ class DecodeEditor extends React.Component {
             onDelete={this.handleDelete}
             onRandom={this.handleRandom}
             onReset={this.handleReset}></CodePegList>
+          <DecodeGrid key={6}
+            remainingGuessCount={maximumGuessCount - prevGuesses.length}
+            guesses={guesses}
+            answers={answers}></DecodeGrid>
+          {newGameButton}
         </div>
-        {newGameButton}
+        <div className="c2">
+          <Assist possibleCodes={possibleCodes}></Assist>
+        </div>
       </div>
     );
   }
@@ -170,6 +170,7 @@ class DecodeEditor extends React.Component {
 const mapStateToProps = state => {
   return {
     code: state.code,
+    possibleCodes: state.possibleCodes,
     nextGuess: state.nextGuess,
     maximumGuessCount: state.settings.maximumGuessCount,
     length: state.settings.codeLength,

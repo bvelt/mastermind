@@ -17,5 +17,8 @@ storiesOf('CodePegList', module)
   .add('selectable items', () => {
     return (<CodePegList isSelectable={true}
       onSelect={value => action('onSelect')(value)}
-      onCheck={action('onCheck')}></CodePegList>);
+      onCheck={action('onCheck')}
+      onRandom={action('onRandom')}
+      onDelete={action('onDelete')}
+      onReset={action('onReset')}></CodePegList>);
   });   

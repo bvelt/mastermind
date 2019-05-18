@@ -1,24 +1,16 @@
+.decodeEditor .c1, .c2 {
+  display: inline-block;
+  vertical-align: top;
+}
+
 .decodeEditor p {
   color: #595959;
   font-size: 16px;
-  line-height: 24px;
   padding: 0;
-  margin: 0 0 8px 0;
+  margin: 0 0 0 0;
 }
 
-.codePegList {
-  float: right;
-}
-
-.decodeGrid {
-  float: right;
-}
-
-.gameover .message {
-  float: right;
-  margin: 16px 8px;
-}
-
-.gameover .buttons {
-  float: right;
+.decodeEditor .gameover .message {
+  margin: 8px;
+  display: inline-block;
 }

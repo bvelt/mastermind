@@ -2,11 +2,14 @@
   --key-peg-position: #000000;
   --key-peg-color: #bfbfbf;
   --key-peg-empty: #ffffff;
-  --key-peg-border: #9E9E9E;
+  --key-peg-border: #D8D8D8;
 }
+
 .keyPeg {
-  height: 15px;
-  width: 15px;
+  margin: 0;
+  padding: 0;
+  height: 10px;
+  width: 10px;
   background-color: var(--key-peg-color-empty);
   border: 1px solid var(--key-peg-border);
   border-radius: 50%;

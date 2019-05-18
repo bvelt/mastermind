@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import CodePeg from '../components/CodePeg';
-import Button from '../components/Button';
 import CodePegList from '../components/CodePegList';
 import * as actions from '../actions/ActionCreators';
 import './CodeEditor.css';
@@ -63,7 +62,6 @@ class CodeEditor extends React.Component {
 
   handleDone() {
     const {
-      values,
       dispatch
     } = this.props;
     dispatch(actions.saveCode());
@@ -85,19 +83,12 @@ class CodeEditor extends React.Component {
         <p>Create a secret pattern of {length} four colored pegs</p>
         <CodePegList values={[...CodePeg.colors().keys()]}
           isSelectable={values.length < length}
-          onSelect={this.handleCodePegClick}></CodePegList>
+          onSelect={this.handleCodePegClick}
+          onCheck={this.handleDone}
+          onDelete={this.handleDelete}
+          onRandom={this.handleRandom}
+          onReset={this.handleReset}></CodePegList>
         <CodePegList values={paddedValues}></CodePegList>
-        <Button label="Random"
-          onClick={this.handleRandom}></Button>
-        <Button label="Reset"
-          isDisabled={values.length === 0}
-          onClick={this.handleReset}></Button>
-        <Button label="Delete"
-          isDisabled={values.length === 0}
-          onClick={this.handleDelete}></Button>
-        <Button label="Save"
-          isDisabled={values.length < length}
-          onClick={this.handleDone}></Button>
       </div>
     );
   }
