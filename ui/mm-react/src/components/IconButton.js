@@ -17,12 +17,16 @@ class IconButton extends React.Component {
       isDisabled = false,
       onClick = () => false
     } = this.props;
+    const style = {
+      backgroundImage: `url(assets/${icon}.png)`
+    };
     return (
       <button type={'button'}
         title={icon}
         className={`iconButton ${icon} ${isDisabled ? 'iconButton__disabled' : ''}`}
         disabled={isDisabled}
-        onClick={!isDisabled ? onClick : () => false}>
+        onClick={!isDisabled ? onClick : () => false}
+        style={style}>
       </button>
     );
   }

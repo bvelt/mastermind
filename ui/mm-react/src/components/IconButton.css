@@ -8,39 +8,13 @@
   display: inline-block;
   cursor: pointer;
   outline: none;
-  background-position: center; 
-  background-repeat:no-repeat;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .iconButton.check {
   color: #ffffff;
   background-color: #262626;
-  background-image:url("/assets/check.png");
-}
-
-.iconButton.close {
-  background-image:url("/assets/close.png");
-}
-
-.iconButton.delete {
-  background-image:url("/assets/delete.png");
-}
-
-.iconButton.info {
-  background-image:url("/assets/info.png");
-}
-
-.iconButton.random {
-  background-image:url("/assets/random.png");
-}
-
-.iconButton.reset {
-  background-image:url("/assets/reset.png");
-}
-
-.iconButton__disabled {
-  opacity: 0.6;
-  cursor: not-allowed;
 }
 
 .iconButton:hover:not(.iconButton__disabled) {
