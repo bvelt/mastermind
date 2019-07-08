@@ -1,8 +1,8 @@
 :root {
   --key-peg-position: #000000;
-  --key-peg-color: #bfbfbf;
+  --key-peg-color: #B0BCCE;
   --key-peg-empty: #ffffff;
-  --key-peg-border: #D8D8D8;
+  --key-peg-border: #B0BCCE;
 }
 
 .keyPeg {

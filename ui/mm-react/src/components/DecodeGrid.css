@@ -1,9 +1,10 @@
 .decodeGrid {
-  margin: 4px 0 4px 2px;
-  padding: 2px 4px 2px 4px;
+  margin: 16px 0 4px 8px;
+  padding: 16px 16px 16px 16px;
   display: inline-block;
   background-color: #ffffff;
   border-radius: 0 24px 0 24px;
+  box-shadow: 0px 12px 16px 0px rgba(0, 0, 0, 0.1);
   width: -moz-min-content;
   width: -webkit-min-content;
   width: min-content;
@@ -18,13 +19,13 @@
 
 .decodeGrid .caption span {
   display: inline-block;
-  font-size: 14px;
+  font-size: 12px;
   font-weight: normal;
   font-weight: 500;
-  color: #515151;
-  padding: 4px 16px;
-  border-radius: 24px;
-  background-color: #F2F3F8;
+  color: #1E2024;
+  padding: 6px 18px;
+  border-radius: 32px;
+  background-color: #CAD5E3;
 }
 
 .decodeGrid table {
@@ -40,7 +41,7 @@ tr.decodeRow>td {
   padding: 4px 6px;
   margin: 0;
   font-size: 18px;
-  color: #D8D8D8;
+  color: #B0BCCE;
 }
 
 tr.decodeRow>td.rowHead {

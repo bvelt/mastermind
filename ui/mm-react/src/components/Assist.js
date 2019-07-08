@@ -92,7 +92,7 @@ class Assist extends React.Component {
             </tbody>
             <tfoot>
               <tr className="total">
-                <td colSpan="5">Possible codes remaining:</td>
+                <td colSpan="5">Remaining Possibilities:</td>
                 <td>{possibleCodes.length}</td>
               </tr>
             </tfoot>

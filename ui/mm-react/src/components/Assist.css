@@ -1,6 +1,6 @@
 :root {
-  --assist-bg-color: #F2F3F8;
-  --assist-border-color: #CACAD2;
+  --assist-bg-color: #CAD5E3;
+  --assist-border-color: #CAD5E3;
 }
 
 .assistWrap .closed {
@@ -8,7 +8,7 @@
 }
 
 .assistWrap {
-  margin: 4px 0 4px 0;
+  margin: 16px 0 4px 0;
 }
 
 .assistWrap .iconButton {
@@ -40,7 +40,7 @@
   background-color: var(--assist-bg-color);
   border-right: 0;
   border-bottom: 0;
-  padding-left:  24px;
+  padding-left:  20px;
   margin-left: -20px;
   position: relative;
   border-radius: 0;
@@ -50,12 +50,12 @@
 
 .assist {
   margin: 0;
-  padding: 4px 8px 4px 8px;
-  border: 1px solid var(--assist-border-color);
+  padding: 16px 16px 16px 16px;
+  border: 0px solid var(--assist-border-color);
   display: inline-block;
   background-color: var(--assist-bg-color);
   border-left: 0;
-  border-radius: 0 24px 24px 24px;
+  border-radius: 0 16px 16px 16px;
   width: -moz-min-content;
   width: -webkit-min-content;
   width: min-content;
@@ -81,7 +81,7 @@
 }
 
 .assist td:last-child {
-  border-left: 1px solid #C3C5CF;
+  border-left: 1px solid #B0BCCE;
 }
 
 .assist thead td {
@@ -92,15 +92,15 @@
 }
 
 .assist thead .codePeg__empty {
-  background-color: #E1E2E7;
-  height: 32px;
-  width: 32px;
+  background-color: #F5F7FA;
+  height: 24px;
+  width: 24px;
   margin: 0;
   border: 0;
 }
 
 .assist thead tr {
-  border-bottom: 1px solid #C3C5CF;
+  border-bottom: 1px solid #B0BCCE;
 }
 
 .assist tbody .codePeg {
@@ -118,37 +118,37 @@
   padding: 8px 4px;
   margin: 0;
   border-radius: 8px 0 0 8px;
-  text-indent: 8px;
-  background-color: #E1E2E7;
+  text-indent: 4px;
+  background-color: #F5F7FA;
 }
 
 .assist .total td:last-child {
   font-size: 16px;
   font-weight: 500;
   color: #ffffff;
-  text-align: right;
+  text-align: center;
   padding: 8px 4px;
   margin: 0;
   background-color: #000000;
 }
 
 .assist tbody tr:not(:last-child) {
-  border-bottom: 1px solid #E1E2E7;
+  border-bottom: 1px solid #B0BCCE;
 }
 
 .assist ul {
   list-style-type: none;
   margin: 0;
-  padding: 4px 0 12px 4px;
+  padding: 4px 0 12px 16px;
 }
 
 .assist li {
   display: inline-block;
-  padding: 4px 12px 0 0;
+  padding: 2px 12px 0 0;
 }
 
 .assist .possible .codePeg {
-  width: 6px;
-  height: 6px;
+  width: 8px;
+  height: 8px;
   margin: 2px;
 }

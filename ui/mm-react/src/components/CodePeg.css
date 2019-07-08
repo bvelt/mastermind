@@ -1,14 +1,14 @@
 
 :root {
-  --code-peg-blue: #1890FF;
-  --code-peg-green: #52C41A;
-  --code-peg-orange: #FA8C16;
-  --code-peg-purple: #722ED1;
-  --code-peg-red: #F5222D;
-  --code-peg-yellow: #FADB14;
-  --code-peg-empty: #ffffff;
-  --code-peg-border: #D8D8D8;
-  --code-peg-size-large: 42px;
+  --code-peg-blue: #36C4F0;
+  --code-peg-green: #2DB67E;
+  --code-peg-orange: #EB4B2E;
+  --code-peg-purple: #8B288E;
+  --code-peg-red: #DF1D5A;
+  --code-peg-yellow: #EBB22E;
+  --code-peg-empty: #E4E9F1;
+  --code-peg-border: #ffffff;
+  --code-peg-size-large: 40px;
 }
 
 .codePeg {
